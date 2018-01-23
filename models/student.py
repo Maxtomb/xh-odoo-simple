@@ -12,7 +12,7 @@ class Student(models.Model):
 
 class StudentResUsers(models.Model):
     _inherit = 'res.users'
-    stype = fields.Char(string='类型', required=True)
+    #stype = fields.Char(string='类型', required=True)
     @api.model
     def create(self, vals):
 

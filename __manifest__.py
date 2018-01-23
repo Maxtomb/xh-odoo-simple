@@ -7,6 +7,7 @@
     'installable':True,
     'application':True,
     'category':'test',
+    'depends': ['base'],
     'demo': [],
     'test': [],
     'data': ['view/student_view.xml','view/student_res_users_view.xml']
