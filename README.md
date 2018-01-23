@@ -1,0 +1,2 @@
+# xh-odoo-simple
+StudentMgmt
