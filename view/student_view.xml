@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+     <record id="view_xh_student_form" model="ir.ui.view">
+        <field name="name">xh.student.form</field>
+        <field name="model">xh.student</field>
+        <field name="arch" type="xml">
+            <form string="Listado de Hello">
+                <group>
+                    <field name="name"/>
+                </group>
+            </form>
+        </field>
+    </record>
+     <record id="view_xh_student_tree" model="ir.ui.view">
+        <field name="name">xh.student.tree</field>
+        <field name="model">xh.student</field>
+        <field name="arch" type="xml">
+           <tree>
+                    <field name="name"/>
+           </tree>
+        </field>
+    </record>
+    <record id="view_xh_teacher_form" model="ir.ui.view">
+        <field name="name">xh.teacher.form</field>
+        <field name="model">xh.teacher</field>
+        <field name="arch" type="xml">
+            <form string="Listado de Hello">
+                <group>
+                    <field name="name"/>
+                </group>
+            </form>
+        </field>
+    </record>
+     <record id="view_xh_teacher_tree" model="ir.ui.view">
+        <field name="name">xh.teacher.tree</field>
+        <field name="model">xh.teacher</field>
+        <field name="arch" type="xml">
+           <tree>
+                    <field name="name"/>
+           </tree>
+        </field>
+    </record>
+    <record id="view_xh_exam_form" model="ir.ui.view">
+        <field name="name">xh.exam.form</field>
+        <field name="model">xh.exam</field>
+        <field name="arch" type="xml">
+            <form string="Listado de Hello">
+                <group>
+                    <field name="stu_name"/>
+                    <field name="subject"/>
+                    <field name="score"/>
+                    <field name="t_name"/>
+                </group>
+            </form>
+        </field>
+    </record>
+     <record id="view_xh_exam_tree" model="ir.ui.view">
+        <field name="name">xh.exam.tree</field>
+        <field name="model">xh.exam</field>
+        <field name="arch" type="xml">
+           <tree>
+                <field name="stu_name"/>
+                <field name="subject"/>
+                <field name="score"/>
+                <field name="t_name"/>
+           </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="act_xh_student">
+        <field name="name">student</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">xh.student</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="act_xh_teacher">
+        <field name="name">teacher</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">xh.teacher</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="act_xh_exam">
+        <field name="name">exam</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">xh.exam</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+<!--  Declaramos los menu -->
+    <menuitem id="xh_student_mgmt_menu" name="学生管理" sequence="10"/>
+    <!--<menuitem id="submenu_xh_student_mgmt_menu" name="学生管理" sequence="10" parent="xh_student_mgmt_menu"/>-->
+    <menuitem id="submenu_xh_student_action" name="学生" sequence="10" parent="xh_student_mgmt_menu" action="act_xh_student"/>
+    <menuitem id="submenu_xh_teacher_action" name="老师" sequence="10" parent="xh_student_mgmt_menu" action="act_xh_teacher"/>
+    <menuitem id="submenu_xh_exam_action" name="考试" sequence="10" parent="xh_student_mgmt_menu" action="act_xh_exam"/>
+</odoo>

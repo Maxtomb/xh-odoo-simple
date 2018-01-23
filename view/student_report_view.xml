@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.actions.report" id="act_xh_exam_report">
+        <field name="name">exam</field>
+        <field name="model">xh.exam</field>
+        <field name="report_type">qweb-html</field>
+    </record>
+    <report
+        model="xh.exam"
+        report_type="qweb-html"
+        name="xh.exam.report"
+    />
+    <template id="report_invoice">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Report title</h2>
+                        <p>This object's name is <span t-field="o.name"/></p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
